@@ -6,4 +6,5 @@ sudo apt update && sudo apt install -y \
   curl \
   git \
   xclip \
-  pkg-config
+  pkg-config \
+  tmux
