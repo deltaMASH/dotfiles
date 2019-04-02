@@ -40,7 +40,7 @@ if &compatible
   set nocompatible
   endif
   " Add the dein installation directory into runtimepath
-  set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+  set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
   if dein#load_state('~/.vim/dein')
     call dein#begin('~/.vim/dein')
