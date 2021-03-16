@@ -1,0 +1,15 @@
+[Unit]
+Description=x11vnc VNC server for x11
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -display :0 -auth /run/user/1000/gdm/Xauthority -listen 0.0.0.0 -rfbport 5901 -xkb -noxdamage -repeat -forever -loop -nevershared
+ExecStop=/usr/bin/killall x11vnc
+Restart=on-failure
+RestartSec=2
+SuccessExitStatus=3
+
+[Install]
+WantedBy=graphical.target
+
