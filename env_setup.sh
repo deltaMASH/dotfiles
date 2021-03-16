@@ -22,3 +22,7 @@ cp .tmux.conf $HOME/.tmux.conf
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 sudo -H python3 -m pip install -U pip
+
+# apt_pkgが無いエラーを解消する
+cd /usr/lib/python3/dist-packages
+sudo ln -s apt_pkg.cpython-{36m,38}-x86_64-linux-gnu.so
