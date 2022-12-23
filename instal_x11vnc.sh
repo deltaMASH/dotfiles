@@ -1,17 +1,7 @@
 #!/bin/bash
 
 install_x11vnc() {
-    GIT_COMMAND=$(which git)
-    if [ $GIT_COMMAND = "" ]; then
-        sudo apt update && sudo apt install -y git
-    fi
-
-    $GIT_COMMAND clone https://github.com/LibVNC/x11vnc -b 0.9.16
-    cd x11vnc
-    ./autogen.sh
-    make && sudo make install \
-        && cd .. \
-        && rm -rf x11vnc
+    sudo apt install -y x11vnc
 }
 
 X11VNC_COMMAND=$(which x11vnc)
