@@ -36,25 +36,11 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 colorscheme ron
 
-if &compatible
-  set nocompatible
-  endif
-  " Add the dein installation directory into runtimepath
-  set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-  if dein#load_state('~/.vim/dein')
-    call dein#begin('~/.vim/dein')
-
-    call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
-    call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  call dein#end()
-  call dein#save_state()
-endif
-
 filetype plugin indent on
 syntax enable
+
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
+Jetpack 'rust-lang/rust'
+call jetpack#end()
